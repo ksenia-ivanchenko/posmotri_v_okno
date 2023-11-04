@@ -13,7 +13,7 @@ html {
   block-size: 100%;
   margin: auto;
   color: #fff;
-  font-family: 'Fira Sans Condensed', sans-serif;
+  font-family: "Fira Sans Condensed", sans-serif;
   font-size: 18px;
   background-color: #1b1919;
 }
@@ -35,4 +35,293 @@ fieldset {
 ul,
 ol {
   list-style: none;
+}
+
+.button {
+  cursor: pointer;
+  appearance: none;
+  background-color: transparent;
+  color: #fff;
+  text-align: center;
+  border: 1px solid #fff;
+  font-family: Fira Sans Condensed;
+  font-size: 18px;
+  font-weight: 700;
+  height: 34px;
+  /* делаем плавность при подчеркивании и смене цвета */
+  outline: 1px solid transparent;
+  outline-offset: 2px;
+  text-decoration: underline 0.08em rgba(255, 255, 255, 0);
+  text-underline-offset: 0.3em;
+  transition: text-decoration-color 300ms, background-color 300ms,
+    outline-color 300ms;
+}
+
+.button:hover {
+  text-decoration-color: rgba(255, 255, 255, 1);
+}
+
+.button:active {
+  background-color: #545050;
+}
+
+.button:focus {
+  outline: transparent;
+}
+
+.button:focus-visible {
+  outline: 1px solid #fff;
+  outline-offset: 2px;
+}
+
+.visually-hidden {
+  position: absolute;
+  inline-size: 1px;
+  block-size: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  clip-path: inset(50%);
+  white-space: nowrap;
+}
+
+.page {
+  padding: 133px 30px;
+  display: flex;
+}
+
+.content {
+  display: flex;
+  gap: 30px;
+  margin: auto;
+  align-items: flex-end;
+  width: 100%;
+  min-height: 534px;
+}
+
+/* секция с видео и формой поиска */
+.result__video-container {
+  width: 711px;
+  height: 386px;
+  margin-bottom: 16px;
+  position: relative; /* чтобы прелоадер был поверх именно этого элемента*/
+}
+
+.result__video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.search-form {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.search-form__fieldset {
+  border: none;
+}
+
+.search-form__fieldset-title {
+  font-weight: 400;
+  font-size: 18px;
+  margin-bottom: 5px;
+}
+
+.search-form__textfield {
+  color: rgba(255, 255, 255, 0.7);
+  font-family: Fira Sans Condensed;
+  font-size: 18px;
+  font-weight: 400;
+  width: 225px;
+  background-color: transparent;
+  border: none;
+  border-top: 1px solid #fff;
+  border-bottom: 1px solid #fff;
+}
+
+.search-form__label {
+  width: fit-content;
+  display: flex;
+  /* добавляем плавность для обводки при вводе с клавиатуры */
+  outline: 1px solid transparent;
+  transition: outline-color 300ms;
+}
+
+.search-form__label-text {
+  margin-left: 5px;
+  cursor: pointer;
+}
+
+/* при вводе с клавиатуры плавно обводятся текстовое поле, но чекбоксы почему-то обводятся обычным образом */
+.search-form__label:has(:focus-visible) {
+  outline: 1px solid #fff;
+  outline-offset: 2px;
+}
+
+/* при наведении на лейбл чекбокса появляется плавное подчеркивание текста */
+.search-form__label:has(.search-form__checkbox) {
+  text-decoration: underline 0.08em rgba(255, 255, 255, 0);
+  text-underline-offset: 0.3em;
+  transition: text-decoration-color 300ms;
+}
+
+.search-form__label:has(.search-form__checkbox):hover {
+  text-decoration-color: rgba(255, 255, 255, 1);
+}
+
+/* в фокусе текстовое поле не обводится */
+.search-form__textfield:focus {
+  outline: transparent;
+}
+
+.search-form__checkbox-list {
+  display: flex;
+  gap: 15px;
+}
+
+.search-form__pseudo-checkbox {
+  display: flex;
+  margin: auto;
+  width: 19px;
+  height: 19px;
+  border: 1px solid #fff;
+  padding: 1px;
+  cursor: pointer;
+}
+
+/* делаем плавность при отметке чекбокса */
+.search-form__pseudo-checkbox::after {
+  content: "";
+  background-color: transparent;
+  transition: background-color 300ms;
+}
+
+/* добавляем квадратик поменьше в квадратик побольше в чекбоксах при отметке */
+.search-form__checkbox:checked + .search-form__pseudo-checkbox::after,
+.search-form__checkbox:active + .search-form__pseudo-checkbox::after {
+  content: "";
+  background-color: #fff;
+  width: 100%;
+  height: 100%;
+}
+
+.search-form__submit-button {
+  width: 194px;
+  align-self: flex-end; /* прижали к низу контейнера */
+}
+
+/* секция с заголовком и карточками */
+.content__details {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.title {
+  color: #fff;
+  font-family: Oswald, sans-serif;
+  font-size: 75px;
+  font-weight: 700;
+  line-height: 94%;
+  text-transform: uppercase;
+}
+
+.content__accent {
+  color: #545050;
+}
+
+.content__list {
+  position: relative; /* чтобы прелоадер был поверх именно этого элемента*/
+  height: 298px;
+  overflow: auto;
+}
+
+.content__list-item:not(:last-child) {
+  margin-bottom: 30px;
+}
+
+.content__video-card-title {
+  font-family: Oswald, sans-serif;
+  font-size: 30px;
+  font-weight: 700;
+  line-height: 100%;
+  text-transform: uppercase;
+}
+
+.content__video-card-description {
+  line-height: 90%;
+}
+
+.content__video-card {
+  display: flex;
+  align-items: flex-start;
+}
+
+.content__video-card-thumbnail {
+  max-width: 194px;
+}
+
+.content__video-card-description-container {
+  flex: 1; /* делаем чтобы описание занимало все место не занятое картинкой */
+}
+
+.more-button {
+  width: 100%;
+}
+
+/* карточки */
+.content__card-link {
+  text-decoration: none;
+  color: #fff;
+  display: block;
+  padding: 2px;
+  margin: 2px;
+  font-size: 18px;
+  line-height: 90%;
+  /* делаем плавность при подчеркивании, смене цвета и обводки для фокуса */
+  outline: 1px solid transparent;
+  text-decoration: underline 0.08em rgba(255, 255, 255, 0);
+  text-underline-offset: 0.3em;
+  transition: text-decoration-color 300ms, background-color 300ms,
+    outline-color 500ms;
+}
+
+.content__card-link_current,
+.content__card-link:active {
+  background-color: #545050;
+}
+
+.content__card-link:hover {
+  text-decoration-color: rgba(255, 255, 255, 1);
+}
+
+.content__card-link:focus {
+  outline: transparent;
+}
+
+.content__card-link:focus-visible {
+  outline: 1px solid #fff;
+}
+
+.content__video-card-title {
+  max-width: 200px;
+  margin-bottom: 6px;
+  line-height: 100%;
+  font-family: Oswald;
+  font-size: 30px;
+  font-weight: 700;
+  text-transform: uppercase;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+.content__video-card-description {
+  max-width: 200px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
 }
