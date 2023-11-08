@@ -14,7 +14,7 @@ html {
   font-family: "Fira Sans Condensed", Arial, sans-serif;
   font-size: 18px;
   background-color: #1b1919;
-  inline-size: 1200px;
+  inline-size: 1140px;
   block-size: 100%;
 }
 
@@ -86,7 +86,6 @@ ol {
 
 .page {
   display: flex;
-  padding: auto;
 }
 
 .content {
