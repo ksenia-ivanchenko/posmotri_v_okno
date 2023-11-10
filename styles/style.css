@@ -211,6 +211,7 @@ ol {
 
 /* секция с заголовком и карточками */
 .content__details {
+  width: 399px;
   display: flex;
   flex-direction: column;
   gap: 26px;
@@ -311,7 +312,7 @@ ol {
 }
 
 .content__video-card-description-container {
-  max-width: 200px;
+  width: 200px;
 }
 
 .content__video-card-title {
