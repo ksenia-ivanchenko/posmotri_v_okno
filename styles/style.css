@@ -89,6 +89,7 @@ ol {
 }
 
 .content {
+  width: 1140px;
   display: flex;
   align-items: flex-end;
   gap: 30px;
@@ -211,7 +212,7 @@ ol {
 
 /* секция с заголовком и карточками */
 .content__details {
-  width: 399px;
+  min-width: 399px;
   display: flex;
   flex-direction: column;
   gap: 26px;
