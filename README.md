@@ -1,3 +1,5 @@
-# posmotri_v_okno
-Проект "Посмотри в окно"
-https://github.com/spasicoxpani/posmotri_v_okno.git
+# Проект "Посмотри в окно"
+
+[Макет](https://www.figma.com/design/QHcvX1RsUI89CulRB7HLk6/%234-%D0%9F%D0%BE%D1%81%D0%BC%D0%BE%D1%82%D1%80%D0%B8-%D0%B2-%D0%BE%D0%BA%D0%BD%D0%BE?node-id=0-1&node-type=canvas&t=3h35LeaI62b9qvLa-0)
+
+Реализована семантическая, доступная, адаптивная верстка со стилизацией форм, применением псевдоэлементов и псевдоклассов и внешним встраиваемым контентом.
